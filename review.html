@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>สมุดทบทวน · YouTrans</title>
+    <link rel="icon" href="icons/youtrans.svg">
+    <link rel="stylesheet" href="review.css">
+    <script defer src="favorites.js"></script>
+    <script defer src="review.js"></script>
+  </head>
+  <body>
+    <header class="brand">
+      <img src="icons/youtrans.svg" width="64" height="64" alt="">
+      <span lang="en">YouTrans</span>
+    </header>
+    <main>
+      <div class="intro">
+        <div>
+          <h1>สมุดทบทวน</h1>
+          <p>คำศัพท์ที่บันทึกจาก YouTube</p>
+        </div>
+        <kbd>Alt / Option + คลิก</kbd>
+      </div>
+      <section class="notebook" aria-labelledby="saved-heading">
+        <div class="toolbar">
+          <div class="list-title">
+            <h2 id="saved-heading">คำที่บันทึก</h2>
+            <span id="count" role="status"></span>
+          </div>
+          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+            <input id="query" type="search" placeholder="ค้นหาคำศัพท์" aria-label="ค้นหาคำศัพท์">
+          </label>
+        </div>
+        <p class="notice" id="notice" role="status">กำลังเปิดสมุดทบทวน…</p>
+        <ul id="entries"></ul>
+      </section>
+    </main>
+    <template id="entry-template">
+      <li class="entry">
+        <div class="bookmark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+        </div>
+        <div class="entry-text">
+          <h3 class="word" lang="en"></h3>
+          <p class="meaning"></p>
+          <p class="context" lang="en"></p>
+          <p class="source"></p>
+        </div>
+        <div class="actions">
+          <a class="button clip" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 4 14 8-14 8z"/></svg>
+            เปิดคลิป
+          </a>
+          <button class="button remove" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M9 6V4h6v2m4 0-1.5 14h-11L5 6"/></svg>
+          </button>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>

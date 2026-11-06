@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "YouTrans — English + ไทย",
+  "version": "0.1.4",
+  "description": "เลือกซับสองภาษาบน YouTube ไฮไลต์คำแปล และเก็บคำศัพท์ไว้ทบทวน",
+  "minimum_chrome_version": "138",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "YouTrans · สมุดทบทวน",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["player-bridge.js"],
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["favorites.js", "subtitle-tracks.js", "caption-settings.js", "content.js"],
+      "css": ["youtube.css"]
+    }
+  ]
+}

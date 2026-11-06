@@ -1,0 +1,10 @@
+.yttrans-active .caption-window .ytp-caption-segment,
+.yttrans-active .caption-window .caption-visual-line:not(:has(.ytp-caption-segment)) {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+::highlight(youtrans-word) {
+  background-color: #ffe082;
+  color: #211a0b;
+}
